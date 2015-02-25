@@ -281,8 +281,8 @@
    * @return {string}
    */
   function resolveUrl(base, url) {
-    var parts = split(url);
-    var baseParts = split(base);
+    var parts = split(url.replace(/\\/g, '/'));
+    var baseParts = split(base.replace(/\\/g, '/'));
 
     if (parts[ComponentIndex.SCHEME]) {
       return joinAndCanonicalizePath(parts);
